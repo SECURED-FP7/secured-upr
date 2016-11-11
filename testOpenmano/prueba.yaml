@@ -1,0 +1,59 @@
+
+---
+name:            prueba
+description:     Complex network scenario consisting of 2 PSAS connected
+topology: 
+  nodes: 
+    PC:                  # vnf/net name in the scenario
+      graph:
+         x: 0
+         y: 142 
+      type:      VNF          # VNF, network, external_network (if it is a datacenter network)
+      VNF model: linux        # VNF name as introduced in OPENMANO DB
+    MOVIL:                  # vnf/net name in the scenario
+      graph:
+         x: 120
+         y: 142
+      type:      VNF          # VNF, network, external_network (if it is a datacenter network)
+      VNF model: linux        # VNF name as introduced in OPENMANO DB
+    apastor:
+      graph:
+        x: 570
+        y: 125
+      type:      VNF
+      VNF model: PSA 
+    Noexisto:
+      graph:
+        x: 570
+        y: 375
+      type:      VNF
+      VNF model: PSA 
+
+    bridge1:
+      graph:
+         x: 217
+         y: 264
+      type:      network
+      model:     bridge_net
+    default: 
+      graph:
+         x: 16
+         y: 464
+      type:      external_network # Datacenter net
+      model:     default
+
+  connections: 
+    dataconn1:
+      nodes: 
+      -   apastor: xe1
+      -   Noexisto: xe0
+    bridgeconn1:
+      nodes: 
+      -   bridge1: null
+      -   PC:  eth0
+      -   MOVIL: eth0
+      -   apastor:  xe0
+    mngmt-net:
+      nodes: 
+      -   default: null
+      -   Noexisto:  xe1

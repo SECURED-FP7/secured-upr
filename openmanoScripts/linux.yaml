@@ -1,0 +1,20 @@
+'{"vnf": {"VNFC": [{"bridge-ifaces":
+[{"vpci": "0000:00:11.0",
+"name": "eth0"}],
+"name": "linux-VM",
+ "description": "Generic Linux Virtual Machine",
+ "ram": 1024,
+ "VNFC image": "/path/to/imagefolder/linux.qcow2",
+ "vcpus": 1,
+ "disk": 10,
+"numas": []}],
+ "description": "Single-VM VNF with a traditional cloud VM based on generic Linux OS",
+ "external-connections": [{"local_iface_name": "eth0",
+"VNFC": "linux-VM",
+"type": "bridge",
+"name": "eth0",
+ "description": "General purpose interface"}],
+"name": "linux"}}'
+
+
+
