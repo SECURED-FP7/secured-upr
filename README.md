@@ -1,14 +1,20 @@
 # Preparing Django Server:
 
-Clone the repository into a new directory (i.e. git) and create a django project in another directory (i.e. upr)
-                
-		sudo apt-get install mysql-server libmysqlclient-dev python-virtualenv libffi-dev
-		#Choose protocol and credentials for clone,git:// or https:// 
-		git clone https://gitlab.secured-fp7.eu/secured/upr.git
-                virtualenv .env
-                source .env/bin/activate
-                pip install django djangorestframework MySQL-python django-rest-swagger wrapt bcrypt python-keystoneclient
-                cd upr
+Clone the repository into a new directory (i.e. git) and create a django project in another directory (i.e. upr).
+
+Install the dependencies:
+```bash
+sudo apt-get install mysql-server libmysqlclient-dev python-virtualenv libffi-dev
+```
+
+Choose protocol and credentials for clone e.g. git:// or https:// 
+```bash
+git clone https://github.com/SECURED-FP7/secured-upr.git
+virtualenv .env
+source .env/bin/activate
+pip install django djangorestframework MySQL-python django-rest-swagger wrapt bcrypt python-keystoneclient
+cd upr
+```
 
 
 
